@@ -1,0 +1,28 @@
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+on_i = 1
+merged = '0'
+hook_source = 'call coil398#init#coc#hook_source()'
+
+[[plugins]] #ステータスバー
+repo = 'vim-airline/vim-airline'
+
+[[plugins]] #カラースキーム
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]] # ファイルツリー
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+hook_add = '''
+	let g:auto_save = 1
+	let g:auto_save_in_insert_mode = 0
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+hook_add = '''
+let g:user_emmet_leader_key='<C-a>'
+'''
