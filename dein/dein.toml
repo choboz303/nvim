@@ -11,6 +11,10 @@ repo = 'vim-airline/vim-airline'
 [[plugins]] #カラースキーム
 repo = 'w0ng/vim-hybrid'
 
+[[plugins]] # カラー
+repo = 'sheerun/vim-polyglot'
+
+
 [[plugins]] # ファイルツリー
 repo = 'scrooloose/nerdtree'
 
