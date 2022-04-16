@@ -31,6 +31,7 @@ set shiftwidth=2
 colorscheme hybrid
 
 "key map
+tnoremap <Esc> <C-\><C-n>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 nnoremap J 10j
 nnoremap K 10k
