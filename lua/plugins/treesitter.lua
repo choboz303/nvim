@@ -1,0 +1,50 @@
+return {
+    "nvim-treesitter/nvim-treesitter",
+    event = { "BufRead", "BufNewFile", "InsertEnter" },
+
+    config = function()
+        local configs = require("nvim-treesitter.configs")
+        configs.setup({
+            ensure_installed = {
+                "markdown",
+                "markdown_inline",
+                "awk",
+                "bash",
+                "comment",
+                "c",
+                "css",
+                "csv",
+                "diff",
+                "gpg",
+                "html",
+                "htmldjango",
+                "javascript",
+                "typescript",
+                "tsx",
+                "json",
+                "lua",
+                "markdown",
+                "python",
+                "rust",
+                "sql",
+                "ssh_config",
+                "tmux",
+                "toml",
+                "vim",
+                "xml",
+                "yaml",
+                "regex",
+                "vimdoc",
+            },
+            -- highlight = {
+            -- 	enable = true,
+            -- 	additional_vim_regex_highlighting = false,
+            -- },
+            sync_install = false,
+            auto_install = true,
+            highlight = { enable = true },
+            indent = { enable = true },
+            autotag = { enable = true },
+        })
+    end,
+}

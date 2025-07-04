@@ -17,12 +17,6 @@ keymap("v", "K", "5k", opts)
 keymap("n", "U", "<C-r>", opts)
 
 keymap("n", "<leader>so", ":source %<CR>", opts)
--- keymap("n", "<leader>nn", ":Neotree toggle<Return>", opts)
-keymap("n", "<leader>o", ":ColorizerToggle<Return>", opts)
-
-keymap("n", "<leader><leader>", ":HopChar2<CR>", opts)
-keymap("n", "<leader>l", ":HopLine<CR>", opts)
-keymap("n", "<leader>w", ":HopWord<CR>", opts)
 
 keymap("n", "<C-n>", ":bnext<CR>", opts)
 keymap("n", "<C-p>", ":bprevious<CR>", opts)
@@ -44,15 +38,7 @@ keymap("n", "gh", ":tabp<CR>", opts)
 keymap("n", "<leader>T", ":T<CR>", opts)
 keymap("n", "<leader>tt", ":term<CR>", opts)
 
--- LSP関連のキーマッピングと設定
--- 標準的な操作
--- keymap("n", "<leader>w", ":w<cr>", { noremap = true, silent = true, desc = "Save" })
--- keymap("n", "<leader>q", ":q<cr>", { noremap = true, silent = true, desc = "Quit" })
 keymap("n", "<leader>q", ":qall<cr>", { noremap = true, silent = true, desc = "Quit all" })
-
--- ウィンドウ操作
-keymap("n", "<leader>|", ":vsplit<cr>", { noremap = true, silent = true, desc = "Vertical Split" })
-keymap("n", "<leader>-", ":split<cr>", { noremap = true, silent = true, desc = "Horizontal Split" })
 
 -- Plugin Manager Lazy.nvim
 keymap("n", "<leader>Ls", ":Lazy sync<cr>", { noremap = true, silent = true, desc = "Lazy sync" })
@@ -62,14 +48,9 @@ keymap("n", "<leader>Lp", ":Lazy profile<cr>", { noremap = true, silent = true, 
 keymap("n", "<C-n>", ":bnext<cr>", { noremap = true, silent = true, desc = "Next Buffer" })
 keymap("n", "<C-p>", ":bprevious<cr>", { noremap = true, silent = true, desc = "Previous Buffer" })
 
--- NeoTree
-keymap("n", "nn", ":Neotree toggle<cr>", { noremap = true, silent = true, desc = "Neotree Toggle" })
--- keymap(
---     "n",
---     "<leader>no",
---     ":Neotree reveal<cr>:Neotree ~/dotfiles/nvim/<cr>",
---     { noremap = true, silent = true, desc = "Neotree reveal" }
--- )
-
--- 検索ハイライト解除
-keymap("n", "<ESC>", ":noh<cr>", { noremap = true, silent = true, desc = "Reset Highlight Search" })
+-- lsp
+keymap("n", "<leader>ca", vim.lsp.buf.code_action, opts, { desc = "Code Action" })
+keymap("n", "<leader>p", vim.lsp.buf.format, opts, { desc = "Format" })
+-- keymap("n", "<leader>p", function()
+--     vim.lsp.buf.format({ async = true })
+-- end, { noremap = true, silent = true, desc = "Format", buffer = ev.buf })

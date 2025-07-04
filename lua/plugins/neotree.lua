@@ -6,6 +6,15 @@ return {
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
+    keys = {
+        {
+            "nn",
+            "<cmd>Neotree toggle<CR>",
+            mode = "n",
+            desc = "Neotree Toggle",
+        },
+    },
+
     opts = {
         window = {
             position = "right",

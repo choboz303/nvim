@@ -7,28 +7,28 @@ autocmd("BufEnter", {
 })
 
 -- ファイル保存時に自動フォーマット
--- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
---
--- autocmd({ "InsertLeave" }, {
---     pattern = { "*" },
---     callback = function()
---         vim.lsp.buf.format({ async = true })
---     end,
--- })
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
--- autocmd("BufEnter", {
---     pattern = "*",
---     callback = function()
---         vim.cmd([[
---             highlight @ibl.indent.char.1 guibg=#073642
---             highlight @ibl.whitespace.char.1 guibg=#073642
---             highlight Whitespace guifg=#073642
---
---             " lspsaga
---             highlight WinBar guibg=#eee8d5
---             highlight WinBarNC guibg=#eee8d5]])
---     end,
--- })
+autocmd({ "InsertLeave" }, {
+    pattern = { "*" },
+    callback = function()
+        vim.lsp.buf.format({ async = true })
+    end,
+})
+
+autocmd("BufEnter", {
+    pattern = "*",
+    callback = function()
+        vim.cmd([[
+            highlight @ibl.indent.char.1 guibg=#073642
+            highlight @ibl.whitespace.char.1 guibg=#073642
+            highlight Whitespace guifg=#073642
+
+            " lspsaga
+            highlight WinBar guibg=#073642
+            highlight WinBarNC guibg=#073642]])
+    end,
+})
 
 -- whitespace 強調
 vim.api.nvim_create_augroup("extra-whitespace", {})
@@ -42,28 +42,6 @@ autocmd({ "ColorScheme" }, {
     pattern = { "*" },
     command = [[highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon]],
 })
-
--- -- filetype
--- autocmd({ "BufNewFile", "BufRead" }, {
---     pattern = "*.lua",
---     callback = function()
---         vim.bo.filetype = "lua"
---     end,
--- })
---
--- autocmd({ "BufNewFile", "BufRead" }, {
---     pattern = "*.py",
---     callback = function()
---         vim.bo.filetype = "python"
---     end,
--- })
---
--- autocmd({ "BufNewFile", "BufRead" }, {
---     pattern = "*.rs",
---     callback = function()
---         vim.bo.filetype = "rust"
---     end,
--- })
 
 -- | base03  | #002b36   | ダーク背景（最も濃い色）  |
 -- | base02  | #073642   | 背景（少し明るい）     |
