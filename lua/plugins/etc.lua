@@ -22,6 +22,9 @@ return {
         "mattn/emmet-vim",
     },
     {
+        "vim-scripts/ReplaceWithRegister",
+    },
+    {
         "lewis6991/gitsigns.nvim",
         opts = {},
         event = { "BufReadPre", "BufNewFile" },
