@@ -41,6 +41,7 @@ require("lazy").setup({
         { import = "plugins.smartword" },
         { import = "plugins.snippets" },
         { import = "plugins.winresizer" },
+        { import = "plugins.tsxcomment" },
     },
     checker = { enabled = true },
 })
