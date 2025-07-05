@@ -37,7 +37,7 @@ require("lazy").setup({
         { import = "plugins.hop" },
         { import = "plugins.indent-blankline" },
         { import = "plugins.nvim-surround" },
-        { import = "plugins.session" },
+        -- { import = "plugins.session" },
         { import = "plugins.smartword" },
         { import = "plugins.snippets" },
         { import = "plugins.winresizer" },
