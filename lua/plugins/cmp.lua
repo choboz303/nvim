@@ -9,7 +9,8 @@ local M = {
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
     },
-    event = { "CmdlineEnter" },
+    event = { "BufReadPre", "InsertEnter" },
+    -- event = { "CmdlineEnter" },
 }
 
 M.config = function()
@@ -38,8 +39,6 @@ M.config = function()
             documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
-            -- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-            -- ["<C-f>"] = cmp.mapping.scroll_docs(4),
             ["<Tab>"] = cmp.mapping.select_next_item(),
             ["<S-Tab>"] = cmp.mapping.select_prev_item(),
             ["<C-Space>"] = cmp.mapping.complete(),

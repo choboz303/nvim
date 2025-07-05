@@ -51,6 +51,13 @@ keymap("n", "<C-p>", ":bprevious<cr>", { noremap = true, silent = true, desc = "
 -- lsp
 keymap("n", "<leader>ca", vim.lsp.buf.code_action, opts, { desc = "Code Action" })
 keymap("n", "<leader>p", vim.lsp.buf.format, opts, { desc = "Format" })
+keymap(
+    "n",
+    "<leader>e",
+    vim.diagnostic.open_float,
+    { noremap = true, silent = true, desc = "Open diagnostic float" }
+    -- { noremap = true, silent = true, desc = "Open diagnostic float", buffer = ev.buf }
+)
 -- keymap("n", "<leader>p", function()
 --     vim.lsp.buf.format({ async = true })
 -- end, { noremap = true, silent = true, desc = "Format", buffer = ev.buf })

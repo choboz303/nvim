@@ -59,11 +59,11 @@ return {
             end
         end,
         -- cmd = "Mason",
+        event = { "BufReadPre", "BufNewFile" }, -- ←これに変更
     },
 
     -- mason-null-ls
-
-    {
+    ({
         "jay-babu/mason-null-ls.nvim",
         -- event = { "BufReadPre", "BufNewFile" },
         dependencies = {
@@ -80,7 +80,7 @@ return {
             })
         end,
         cmd = "Mason",
-    },
+    }),
 
     -- none-ls
     {
@@ -133,22 +133,6 @@ return {
         },
     },
 
-    -- {
-    --     "nvimdev/lspsaga.nvim",
-    --     config = function()
-    --         require("lspsaga").setup({
-    --             symbol_in_winbar = {
-    --                 separator = "  ",
-    --             },
-    --         })
-    --     end,
-    --     dependencies = {
-    --         "nvim-treesitter/nvim-treesitter",
-    --         "nvim-tree/nvim-web-devicons",
-    --     },
-    --     event = { "BufRead", "BufNewFile" },
-    -- },
-    --
     -- -- mason-nvim-dap
     {
         "jay-babu/mason-nvim-dap.nvim",
@@ -164,4 +148,5 @@ return {
         },
         event = { "BufRead", "BufNewFile" },
     },
+}
 }
