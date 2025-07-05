@@ -1,8 +1,8 @@
 return {
     "kylechui/nvim-surround",
+    event = "VeryLazy",
     opts = {},
     version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
 }
 
 --     Old text                    Command         New text

@@ -62,11 +62,8 @@ M.config = function()
             { name = "buffer" },
         },
     })
-
     cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline({
-            ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        }),
+        mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
             { name = "path" },
         }, {
@@ -74,5 +71,16 @@ M.config = function()
         }),
     })
 end
+--     cmp.setup.cmdline(":", {
+--         mapping = cmp.mapping.preset.cmdline({
+--             ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+--         }),
+--         sources = cmp.config.sources({
+--             { name = "path" },
+--         }, {
+--             { name = "cmdline" },
+--         }),
+--     })
+-- end
 
 return M

@@ -2,6 +2,7 @@ return {
     "JoosepAlviste/nvim-ts-context-commentstring",
     dependencies = {
         "numToStr/Comment.nvim",
+        keys = { "gc", "gb" },
     },
     config = function()
         local status, comment = pcall(require, "Comment")

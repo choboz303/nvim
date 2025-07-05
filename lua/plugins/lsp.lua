@@ -61,9 +61,7 @@ return {
         -- cmd = "Mason",
         event = { "BufReadPre", "BufNewFile" }, -- ←これに変更
     },
-
-    -- mason-null-ls
-    ({
+    {
         "jay-babu/mason-null-ls.nvim",
         -- event = { "BufReadPre", "BufNewFile" },
         dependencies = {
@@ -80,7 +78,7 @@ return {
             })
         end,
         cmd = "Mason",
-    }),
+    },
 
     -- none-ls
     {
@@ -148,5 +146,4 @@ return {
         },
         event = { "BufRead", "BufNewFile" },
     },
-}
 }

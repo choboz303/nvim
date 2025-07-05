@@ -6,14 +6,18 @@ autocmd("BufEnter", {
     command = "set fo-=c fo-=r fo-=o",
 })
 
--- ファイル保存時に自動フォーマット
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
-autocmd({ "InsertLeave" }, {
+vim.api.nvim_create_augroup("extra-whitespace", {})
+autocmd({ "VimEnter", "WinEnter" }, {
+    group = "extra-whitespace",
     pattern = { "*" },
-    callback = function()
-        vim.lsp.buf.format({ async = true })
-    end,
+    command = [[call matchadd('ExtraWhitespace', '[\u200B\u3000]')]],
+})
+autocmd({ "ColorScheme" }, {
+    group = "extra-whitespace",
+    pattern = { "*" },
+    command = [[highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon]],
 })
 
 autocmd("BufEnter", {
@@ -30,18 +34,12 @@ autocmd("BufEnter", {
     end,
 })
 
--- whitespace 強調
-vim.api.nvim_create_augroup("extra-whitespace", {})
-autocmd({ "VimEnter", "WinEnter" }, {
-    group = "extra-whitespace",
-    pattern = { "*" },
-    command = [[call matchadd('ExtraWhitespace', '[\u200B\u3000]')]],
-})
-autocmd({ "ColorScheme" }, {
-    group = "extra-whitespace",
-    pattern = { "*" },
-    command = [[highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon]],
-})
+-- autocmd({ "InsertLeave" }, {
+--     pattern = { "*" },
+--     callback = function()
+--         vim.lsp.buf.format({ async = true })
+--     end,
+-- })
 
 -- | base03  | #002b36   | ダーク背景（最も濃い色）  |
 -- | base02  | #073642   | 背景（少し明るい）     |

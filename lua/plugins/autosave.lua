@@ -1,6 +1,7 @@
 return {
     "Pocco81/auto-save.nvim",
-    lazy = false,
+    -- lazy = false,
+    event = { "InsertLeave", "TextChanged" },
     opts = {
         debounce_delay = 500,
         execution_message = {
@@ -13,4 +14,3 @@ return {
         { "<leader>uv", "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
     },
 }
-
