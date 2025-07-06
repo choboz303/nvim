@@ -1,6 +1,5 @@
 local lsp_servers = {
     "pyright",
-    "ruff",
     "bashls",
     "lua_ls",
     "yamlls",
@@ -13,11 +12,14 @@ local lsp_servers = {
 }
 
 local formatters = {
-    "djlint",
+    "ruff",
     "stylua",
-    "shfmt",
+    "black",
+    "isort",
     "prettier",
+    -- "djlint",
 }
+
 local diagnostics = {
     "yamllint",
     "selene",
@@ -58,12 +60,13 @@ return {
                 })
             end
         end,
-        -- cmd = "Mason",
-        event = { "BufReadPre", "BufNewFile" }, -- ←これに変更
+        cmd = "Mason",
     },
+
+    -- mason-null-ls
     {
         "jay-babu/mason-null-ls.nvim",
-        -- event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPre", "BufNewFile" }, -- filetype ???
         dependencies = {
             "williamboman/mason.nvim",
             -- "jose-elias-alvarez/null-ls.nvim",
@@ -109,41 +112,19 @@ return {
         event = { "BufReadPre", "BufNewFile" },
     },
 
-    -- lspsaga
-    {
-        "nvimdev/lspsaga.nvim",
-        event = { "BufRead", "BufNewFile" },
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-tree/nvim-web-devicons",
-        },
-        opts = {
-            symbol_in_winbar = {
-                separator = "  ",
-            },
-            lightbulb = {
-                enable = true,
-                sign = true,
-                virtual_text = false,
-                debounce = 10,
-                sign_priority = 40,
-            },
-        },
-    },
-
-    -- -- mason-nvim-dap
-    {
-        "jay-babu/mason-nvim-dap.nvim",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "mfussenegger/nvim-dap",
-        },
-        opts = {
-            ensure_installed = {
-                "python",
-            },
-            handlers = {},
-        },
-        event = { "BufRead", "BufNewFile" },
-    },
+    -- mason-nvim-dap
+    -- {
+    --     "jay-babu/mason-nvim-dap.nvim",
+    --     dependencies = {
+    --         "williamboman/mason.nvim",
+    --         "mfussenegger/nvim-dap",
+    --     },
+    --     opts = {
+    --         ensure_installed = {
+    --             "python",
+    --         },
+    --         handlers = {},
+    --     },
+    --     event = { "BufRead", "BufNewFile" },
+    -- },
 }

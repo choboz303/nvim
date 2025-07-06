@@ -8,6 +8,8 @@ autocmd("BufEnter", {
 
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
+vim.cmd("command! -nargs=* T split | wincmd j | resize 10 | terminal <args>")
+
 vim.api.nvim_create_augroup("extra-whitespace", {})
 autocmd({ "VimEnter", "WinEnter" }, {
     group = "extra-whitespace",

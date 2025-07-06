@@ -17,13 +17,14 @@ return {
 
     opts = {
         window = {
-            position = "right",
+            position = "left",
+            width = 30,
         },
         event_handlers = {
             {
                 event = "file_open_requested",
                 handler = function()
-                    require("neo-tree.command").execute({ action = "close" })
+                    require("neo-tree.command").execute({ action = "open" })
                 end,
             },
         },

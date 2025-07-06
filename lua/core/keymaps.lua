@@ -35,7 +35,7 @@ keymap("n", "gx", ":tabclose<CR>", opts)
 keymap("n", "gl", ":tabn<CR>", opts)
 keymap("n", "gh", ":tabp<CR>", opts)
 
-keymap("n", "<leader>T", ":T<CR>", opts)
+keymap("n", "T", ":T<CR>", opts)
 keymap("n", "<leader>tt", ":term<CR>", opts)
 
 keymap("n", "<leader>q", ":qall<cr>", { noremap = true, silent = true, desc = "Quit all" })
@@ -56,7 +56,7 @@ keymap(
     "<leader>e",
     vim.diagnostic.open_float,
     { noremap = true, silent = true, desc = "Open diagnostic float" }
-    -- { noremap = true, silent = true, desc = "Open diagnostic float", buffer = ev.buf }
+-- { noremap = true, silent = true, desc = "Open diagnostic float", buffer = ev.buf }
 )
 -- keymap("n", "<leader>p", function()
 --     vim.lsp.buf.format({ async = true })

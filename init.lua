@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
     local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -12,6 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         os.exit(1)
     end
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("core.options")
@@ -26,7 +28,9 @@ require("lazy").setup({
         { import = "plugins.autosave" },
         { import = "plugins.telescope" },
         { import = "plugins.lsp" },
+        { import = "plugins.lspsaga" },
         { import = "plugins.cmp" },
+        { import = "plugins.snippets" },
         { import = "plugins.treesitter" },
         { import = "plugins.rainbow" },
         { import = "plugins.alpha" },
@@ -37,9 +41,8 @@ require("lazy").setup({
         { import = "plugins.hop" },
         { import = "plugins.indent-blankline" },
         { import = "plugins.nvim-surround" },
-        -- { import = "plugins.session" },
+        { import = "plugins.session" },
         { import = "plugins.smartword" },
-        { import = "plugins.snippets" },
         { import = "plugins.winresizer" },
         { import = "plugins.tsxcomment" },
     },

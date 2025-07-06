@@ -5,7 +5,7 @@ vim.cmd("language ja_JP.UTF-8") -- 表示言語を日本語にする
 -- ファイル
 -- vim.opt.fileencoding = "utf-8" -- エンコーディングをUTF-8に設定
 if vim.bo.modifiable then
-    vim.opt.fileencoding = "utf-8" -- エンコーディングをUTF-8に設定
+        vim.opt.fileencoding = "utf-8" -- エンコーディングをUTF-8に設定
 end
 
 vim.opt.swapfile = false -- スワップファイルを作成しない
@@ -36,11 +36,14 @@ vim.opt.termguicolors = true -- 24 ビットカラーを使用
 vim.opt.background = "dark"  -- ダークカラーを使用する
 
 -- インデント
-vim.opt.shiftwidth = 4     -- シフト幅を4に設定する
-vim.opt.tabstop = 4        -- タブ幅を4に設定する
-vim.opt.expandtab = true   -- タブ文字をスペースに置き換える
-vim.opt.autoindent = true  -- 自動インデントを有効にする
-vim.opt.smartindent = true -- インデントをスマートに調整する
+vim.opt.shiftwidth = 4   -- シフト幅を4に設定する
+vim.opt.tabstop = 4      -- タブ幅を4に設定する
+vim.opt.expandtab = true -- タブ文字をスペースに置き換える
+-- vim.opt.autoindent = true           -- 自動インデントを有効にする
+-- vim.opt.smartindent = true          -- インデントをスマートに調整する
+vim.opt.list = true
+vim.opt.listchars = { space = "·" } --特別な指定方法の一つ。
+-- vim.opt.listchars = { tab = ">.", trail = "-", extends = "»", precedes = "«", nbsp = "%", space = "·" } --特別な指定方法の一つ。
 
 -- 表示
 vim.opt.number = true     -- 行番号を表示
@@ -76,7 +79,7 @@ vim.opt.fillchars = { eob = " " }
 
 -- cursor blink
 vim.opt.guicursor = {
-    "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-    "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-    "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+        "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+        "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+        "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
 }
