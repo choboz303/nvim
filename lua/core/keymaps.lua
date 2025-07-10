@@ -3,6 +3,8 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
+-- keymap("n", "'", ";", opts)
+
 keymap("n", "<leader>bd", ":bd<CR>", opts)
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)

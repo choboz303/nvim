@@ -6,11 +6,7 @@ return {
                 separator = "  ",
             },
             lightbulb = {
-                -- enable = true,
-                -- sign = true,
                 virtual_text = false,
-                -- debounce = 10,
-                -- sign_priority = 40,
             },
         })
     end,
@@ -19,6 +15,4 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     event = "LspAttach",
-
-    -- event = { "BufRead", "BufNewFile" },
 }
