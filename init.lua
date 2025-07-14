@@ -46,6 +46,7 @@ require("lazy").setup({
         { import = "plugins.winresizer" },
         { import = "plugins.tsxcomment" },
         { import = "plugins.sneak" },
+        { import = "plugins.dap" },
     },
     checker = { enabled = true },
 })

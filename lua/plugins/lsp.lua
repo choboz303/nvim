@@ -97,20 +97,4 @@ return {
         end,
         event = { "BufReadPre", "BufNewFile" },
     },
-
-    -- mason-nvim-dap
-    -- {
-    --     "jay-babu/mason-nvim-dap.nvim",
-    --     dependencies = {
-    --         "williamboman/mason.nvim",
-    --         "mfussenegger/nvim-dap",
-    --     },
-    --     opts = {
-    --         ensure_installed = {
-    --             "python",
-    --         },
-    --         handlers = {},
-    --     },
-    --     event = { "BufRead", "BufNewFile" },
-    -- },
 }
