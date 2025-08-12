@@ -26,11 +26,13 @@ local diagnostics = {
 }
 
 return {
+    -- アイコン付き補完
     {
         "onsails/lspkind.nvim",
         event = "InsertEnter",
     },
 
+    -- LSPサーバー管理
     {
         "williamboman/mason.nvim",
         dependencies = {
@@ -53,13 +55,38 @@ return {
                     end,
                 })
             end
+
+            -- ======== フロートウィンドウ色設定 ========
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#073642", fg = "#ffffff" })
+            vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#073642", fg = "#aaaaaa" })
+
+            -- diagnostics ポップアップ
+            vim.diagnostic.config({
+                float = {
+                    border = "rounded",
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+                },
+            })
+
+            -- hover
+            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+                border = "rounded",
+                winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+            })
+
+            -- signature help
+            vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+                border = "rounded",
+                winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+            })
         end,
         cmd = "Mason",
     },
 
+    -- null-ls (formatter / diagnostics) 管理
     {
         "jay-babu/mason-null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" }, -- filetype ???
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim",
@@ -74,6 +101,7 @@ return {
         cmd = "Mason",
     },
 
+    -- null-ls 設定
     {
         "nvimtools/none-ls.nvim",
         requires = "nvim-lua/plenary.nvim",

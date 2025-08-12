@@ -3,7 +3,7 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
-keymap("n", "<leader>bd", ":bd<CR>", opts)
+-- keymap("n", "<leader>bd", ":bd<CR>", opts)
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 -- keymap("n", "<ESC><ESC>", ":nohl<CR>", opts)
@@ -36,7 +36,7 @@ keymap("n", "gx", ":tabclose<CR>", opts)
 keymap("n", "gl", ":tabn<CR>", opts)
 keymap("n", "gh", ":tabp<CR>", opts)
 
-keymap("n", "T", ":T<CR>", opts)
+keymap("n", "<leader>T", ":T<CR>", opts)
 keymap("n", "<leader>tt", ":term<CR>", opts)
 
 keymap("n", "<leader>q", ":qall<cr>", { noremap = true, silent = true, desc = "Quit all" })

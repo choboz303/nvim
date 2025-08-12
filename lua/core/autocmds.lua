@@ -26,13 +26,18 @@ autocmd("BufEnter", {
     pattern = "*",
     callback = function()
         vim.cmd([[
-            highlight @ibl.indent.char.1 guibg=#073642
-            highlight @ibl.whitespace.char.1 guibg=#073642
+            " highlight @ibl.indent.char.1 guibg=#002b36
             highlight Whitespace guifg=#073642
 
+            " highlight @ibl.whitespace.char.1 guibg=#002b36
+            " highlight Normal guibg=#073642
+
+            highlight @ibl.whitespace.char.1 guibg=#073642
+            highlight Normal guibg=#002b36
+
             " lspsaga
-            highlight WinBar guibg=#073642
-            highlight WinBarNC guibg=#073642]])
+            highlight WinBar guibg=#002b36
+            highlight WinBarNC guibg=#002b36]])
     end,
 })
 

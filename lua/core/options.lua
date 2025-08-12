@@ -5,7 +5,7 @@ vim.cmd("language ja_JP.UTF-8") -- 表示言語を日本語にする
 -- ファイル
 -- vim.opt.fileencoding = "utf-8" -- エンコーディングをUTF-8に設定
 if vim.bo.modifiable then
-        vim.opt.fileencoding = "utf-8" -- エンコーディングをUTF-8に設定
+    vim.opt.fileencoding = "utf-8" -- エンコーディングをUTF-8に設定
 end
 
 vim.opt.swapfile = false -- スワップファイルを作成しない
@@ -55,8 +55,8 @@ vim.opt.visualbell = true -- ビープ音を表示する代わりに画面をフ
 vim.opt.showmatch = true  -- 対応する括弧をハイライト表示
 
 -- インタフェース
-vim.opt.winblend = 0       -- ウィンドウの不透明度
-vim.opt.pumblend = 0       -- ポップアップメニューの不透明度
+vim.opt.winblend = 20      -- ウィンドウの不透明度
+vim.opt.pumblend = 20      -- ポップアップメニューの不透明度
 vim.opt.showtabline = 2    -- タブラインを表示する設定
 vim.opt.signcolumn = "yes" -- サインカラムを表示
 
@@ -79,7 +79,7 @@ vim.opt.fillchars = { eob = " " }
 
 -- cursor blink
 vim.opt.guicursor = {
-        "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-        "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-        "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+    "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+    "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+    "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
 }

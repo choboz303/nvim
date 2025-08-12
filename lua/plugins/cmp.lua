@@ -29,15 +29,22 @@ M.config = function()
                 end,
             }),
         },
+
         snippet = {
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
             end,
         },
+
         window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
+            completion = cmp.config.window.bordered({
+                winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+            }),
+            documentation = cmp.config.window.bordered({
+                winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+            }),
         },
+
         mapping = cmp.mapping.preset.insert({
             ["<Tab>"] = cmp.mapping.select_next_item(),
             ["<S-Tab>"] = cmp.mapping.select_prev_item(),
@@ -71,16 +78,5 @@ M.config = function()
         }),
     })
 end
---     cmp.setup.cmdline(":", {
---         mapping = cmp.mapping.preset.cmdline({
---             ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
---         }),
---         sources = cmp.config.sources({
---             { name = "path" },
---         }, {
---             { name = "cmdline" },
---         }),
---     })
--- end
 
 return M
