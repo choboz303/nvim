@@ -55,8 +55,8 @@ vim.opt.visualbell = true -- ビープ音を表示する代わりに画面をフ
 vim.opt.showmatch = true  -- 対応する括弧をハイライト表示
 
 -- インタフェース
-vim.opt.winblend = 20      -- ウィンドウの不透明度
-vim.opt.pumblend = 20      -- ポップアップメニューの不透明度
+vim.opt.winblend = 0       -- ウィンドウの不透明度
+vim.opt.pumblend = 0       -- ポップアップメニューの不透明度
 vim.opt.showtabline = 2    -- タブラインを表示する設定
 vim.opt.signcolumn = "yes" -- サインカラムを表示
 

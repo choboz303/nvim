@@ -26,27 +26,18 @@ autocmd("BufEnter", {
     pattern = "*",
     callback = function()
         vim.cmd([[
-            " highlight @ibl.indent.char.1 guibg=#002b36
-            highlight Whitespace guifg=#073642
-
-            " highlight @ibl.whitespace.char.1 guibg=#002b36
-            " highlight Normal guibg=#073642
 
             highlight @ibl.whitespace.char.1 guibg=#073642
-            highlight Normal guibg=#002b36
+            highlight Whitespace guifg=#29444d
+            " highlight Whitespace guifg=#2e474f
 
             " lspsaga
-            highlight WinBar guibg=#002b36
-            highlight WinBarNC guibg=#002b36]])
+            highlight WinBar guibg=#05262e
+            highlight WinBarNC guibg=none
+            " highlight WinBarNC guibg=#073642
+        ]])
     end,
 })
-
--- autocmd({ "InsertLeave" }, {
---     pattern = { "*" },
---     callback = function()
---         vim.lsp.buf.format({ async = true })
---     end,
--- })
 
 -- | base03  | #002b36   | ダーク背景（最も濃い色）  |
 -- | base02  | #073642   | 背景（少し明るい）     |

@@ -4,6 +4,7 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
 -- keymap("n", "<leader>bd", ":bd<CR>", opts)
+vim.keymap.del("n", "gri")
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 -- keymap("n", "<ESC><ESC>", ":nohl<CR>", opts)
@@ -44,6 +45,12 @@ keymap("n", "<leader>q", ":qall<cr>", { noremap = true, silent = true, desc = "Q
 -- Plugin Manager Lazy.nvim
 keymap("n", "<leader>Ls", ":Lazy sync<cr>", { noremap = true, silent = true, desc = "Lazy sync" })
 keymap("n", "<leader>Lp", ":Lazy profile<cr>", { noremap = true, silent = true, desc = "Lazy profile" })
+
+-- WinResizerを使わず、Ctrl + 矢印でリサイズ（透過環境でも安定）
+keymap("n", "<S-Left>", "<cmd>vertical resize +2<cr>")
+keymap("n", "<S-Right>", "<cmd>vertical resize -2<cr>")
+keymap("n", "<S-Up>", "<cmd>resize -2<cr>")
+keymap("n", "<S-Down>", "<cmd>resize +2<cr>")
 
 -- バッファ移動
 keymap("n", "<C-n>", ":bnext<cr>", { noremap = true, silent = true, desc = "Next Buffer" })

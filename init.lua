@@ -19,10 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 require("core.options")
 require("core.keymaps")
 require("core.autocmds")
-
 require("lazy").setup({
     spec = {
-        { import = "plugins.neosolarized" },
+        { import = "plugins.colorscheme" },
         { import = "plugins.neotree" },
         { import = "plugins.etc" },
         { import = "plugins.autosave" },
