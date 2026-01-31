@@ -19,6 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 require("core.options")
 require("core.keymaps")
 require("core.autocmds")
+
+require("config.colors")
+
 require("lazy").setup({
     spec = {
         { import = "plugins.colorscheme" },

@@ -1,5 +1,4 @@
 local autocmd = vim.api.nvim_create_autocmd
-
 -- Don't auto commenting new lines
 autocmd("BufEnter", {
     pattern = "*",
@@ -11,47 +10,36 @@ vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 vim.cmd("command! -nargs=* T split | wincmd j | resize 10 | terminal <args>")
 
 vim.api.nvim_create_augroup("extra-whitespace", {})
+
 autocmd({ "VimEnter", "WinEnter" }, {
     group = "extra-whitespace",
     pattern = { "*" },
     command = [[call matchadd('ExtraWhitespace', '[\u200B\u3000]')]],
 })
-autocmd({ "ColorScheme" }, {
-    group = "extra-whitespace",
-    pattern = { "*" },
-    command = [[highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon]],
+
+local group = vim.api.nvim_create_augroup("MyCustomHighlights", { clear = true })
+
+autocmd("ColorScheme", {
+    group = group,
+    callback = function()
+        vim.api.nvim_set_hl(0, "ExtraWhitespace", {
+            ctermbg = 202,
+            ctermfg = 202,
+            bg = "salmon",
+        })
+        vim.api.nvim_set_hl(0, "CursorColumn", {
+            bg = "#29444d",
+        })
+    end,
 })
 
 autocmd("BufEnter", {
     pattern = "*",
     callback = function()
         vim.cmd([[
-
-            highlight @ibl.whitespace.char.1 guibg=#073642
-            highlight Whitespace guifg=#29444d
-            " highlight Whitespace guifg=#2e474f
-
-            " lspsaga
-            highlight WinBar guibg=#05262e
-            highlight WinBarNC guibg=none
-            " highlight WinBarNC guibg=#073642
+            " cmp window
+            highlight Floatborder guifg=none guibg=none
+            highlight NormalFloat guifg=none guibg=none
         ]])
     end,
 })
-
--- | base03  | #002b36   | ダーク背景（最も濃い色）  |
--- | base02  | #073642   | 背景（少し明るい）     |
--- | base01  | #586e75   | コメントなど（淡い文字色） |
--- | base00  | #657b83   | 警告文字など        |
--- | base0   | #839496   | 通常テキスト        |
--- | base1   | #93a1a1   | 強調テキスト        |
--- | base2   | #eee8d5   | ライト背景（明るい背景色） |
--- | base3   | #fdf6e3   | 最も明るい背景色      |
--- | yellow  | #b58900   | 警告・注意         |
--- | orange  | #cb4b16   | エラーなど         |
--- | red     | #dc322f   | 強いエラー         |
--- | magenta | #d33682   | 強調色           |
--- | violet  | #6c71c4   | 補助強調色         |
--- | blue    | #268bd2   | リンク、キーワード     |
--- | cyan    | #2aa198   | 補助キーワード、タイプ   |
--- | green   | #859900   | 成功、情報         |
