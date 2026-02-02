@@ -1,18 +1,44 @@
-vim.api.nvim_create_autocmd("ColorScheme", {
+local autocmd = vim.api.nvim_create_autocmd
+local highlights = vim.api.nvim_create_augroup("MyCustomHighlights", { clear = true })
+
+autocmd({ "ColorScheme", "VimEnter", "WinEnter" }, {
+    group = highlights,
     callback = function()
-        local Color = require("colorbuddy").Color
-        local Group = require("colorbuddy").Group
-        local colors = require("colorbuddy").colors
+        vim.api.nvim_set_hl(0, "ExtraWhitespace", {
+            bg = "salmon",
+            ctermbg = 202,
+            ctermfg = 202,
+        })
 
-        -- base02 を上書き（少し暗く）
-        -- Color.new("base02", "#073642")
-        -- Color.new("base02", "#0b3b44")
-        Color.new("base02", "#29444d")
+        vim.api.nvim_set_hl(0, "CursorColumn", {
+            bg = "#29444d",
+        })
+        vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
-        -- 念のため cursor 系を再適用
-        Group.new("CursorLine", nil, colors.base02)
+        local ok, cb = pcall(require, "colorbuddy")
+        if ok then
+            local Color = require("colorbuddy").Color
+            local colors = cb.colors
+            local Group = cb.Group
+            local styles = cb.styles
+            Group.new("WinBar", colors.base03, colors.base03, styles.none)
+            Group.new("WinBarNC", colors.base03, colors.base02, styles.none)
+
+            Color.new("custom0", "#29444d")
+            Color.new("custom1", "#3c5c66")
+            -- Color.new("custom1", "#395861")
+            -- Color.new("custom1", "#32525c")
+
+            Group.new("Whitespace", colors.custom1, nil)
+            Group.new("CursorLine", nil, colors.custom0, styles.none)
+            Group.new("@ibl.whitespace.char.1", colors.custom1, colors.custom0, styles.none)
+        end
     end,
 })
+
+-- Trigger ColorScheme once on startup
+vim.cmd("doautocmd ColorScheme")
 
 -- Color.new("base03", "#002b36")
 -- Color.new("base02", "#073642")

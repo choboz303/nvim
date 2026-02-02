@@ -42,7 +42,7 @@ vim.opt.expandtab = true -- タブ文字をスペースに置き換える
 -- vim.opt.autoindent = true           -- 自動インデントを有効にする
 -- vim.opt.smartindent = true          -- インデントをスマートに調整する
 vim.opt.list = true
--- vim.opt.listchars = { space = "·" }
+vim.opt.listchars = { space = "·" }
 -- vim.opt.listchars = { tab = ">.", trail = "-", extends = "»", precedes = "«", nbsp = "%", space = "·" } --特別な指定方法の一つ。
 
 -- 表示
