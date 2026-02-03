@@ -17,7 +17,7 @@ autocmd({ "ColorScheme", "VimEnter", "WinEnter" }, {
         -- ===== Colors =====
         Color.new("custom0", "#29444d")
         Color.new("custom1", "#3d4d4d")
-        Color.new("custom2", "#ffffff")
+        Color.new("custom2", "#3e759c")
         Color.new("salmon", "#fa8072")
 
         -- ===== Core UI =====
@@ -35,7 +35,7 @@ autocmd({ "ColorScheme", "VimEnter", "WinEnter" }, {
         -- Extra whitespace (trailing)
         Group.new("ExtraWhitespace", nil, colors.salmon)
 
-        Group.new("Visual", nil, colors.blue)
+        Group.new("Visual", nil, colors.custom2)
 
         -- ibl
         -- Group.new("@ibl.whitespace.char.1", colors.custom1, colors.custom0)
