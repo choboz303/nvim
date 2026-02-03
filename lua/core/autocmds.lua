@@ -1,9 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 local general = vim.api.nvim_create_augroup("General", { clear = true })
 local whitespace = vim.api.nvim_create_augroup("ExtraWhitespace", { clear = true })
--- local highlights = vim.api.nvim_create_augroup("MyCustomHighlights", { clear = true })
--- local Color = require("colorbuddy").Color
--- local colors = require("colorbuddy").color
 
 -- Don't auto comment new lines
 autocmd("BufEnter", {

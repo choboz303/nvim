@@ -20,11 +20,11 @@ require("core.options")
 require("core.keymaps")
 require("core.autocmds")
 
-require("config.colors")
+require("config.colorbuddy")
 
 require("lazy").setup({
     spec = {
-        { import = "plugins.colorscheme" },
+        { import = "plugins.neosolarized" },
         { import = "plugins.neotree" },
         { import = "plugins.etc" },
         { import = "plugins.autosave" },
