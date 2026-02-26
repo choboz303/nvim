@@ -46,13 +46,13 @@ vim.opt.listchars = { space = "·" }
 -- vim.opt.listchars = { tab = ">.", trail = "-", extends = "»", precedes = "«", nbsp = "%", space = "·" } --特別な指定方法の一つ。
 
 -- 表示
-vim.opt.number = true         -- 行番号を表示
-vim.opt.relativenumber = true -- 相対行番号を表示
-vim.opt.wrap = true           -- テキストの自動折り返しを無効に
-vim.opt.showtabline = 2       -- タブラインを表示
+vim.opt.number = true     -- 行番号を表示
+-- vim.opt.relativenumber = true -- 相対行番号を表示
+vim.opt.wrap = true       -- テキストの自動折り返しを無効に
+vim.opt.showtabline = 2   -- タブラインを表示
 -- （1:常に表示、2:タブが開かれたときに表示）
-vim.opt.visualbell = true     -- ビープ音を表示する代わりに画面をフラッシュ
-vim.opt.showmatch = true      -- 対応する括弧をハイライト表示
+vim.opt.visualbell = true -- ビープ音を表示する代わりに画面をフラッシュ
+vim.opt.showmatch = true  -- 対応する括弧をハイライト表示
 
 -- インタフェース
 vim.opt.winblend = 0       -- ウィンドウの不透明度
@@ -77,9 +77,12 @@ vim.diagnostic.config({ severity_sort = true })
 -- チルダ
 vim.opt.fillchars = { eob = " " }
 
+vim.opt.guicursor = "n-v-c:block-Cursor," .. "i-ci-ve:ver25-Cursor," .. "r-cr:hor20-Cursor"
+
+-- iterm2↓
 -- cursor blink
-vim.opt.guicursor = {
-    "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-    "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-    "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
-}
+-- vim.opt.guicursor = {
+--     "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+--     "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+--     "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
+-- }

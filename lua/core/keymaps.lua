@@ -7,8 +7,8 @@ vim.g.mapleader = " "
 vim.keymap.del("n", "gri")
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
--- keymap("n", "<ESC><ESC>", ":nohl<CR>", opts)
-keymap("n", "//", ":nohl<CR>", opts)
+keymap("n", "<ESC><ESC>", ":nohl<CR>", opts)
+-- keymap("n", "//", ":nohl<CR>", opts)
 keymap("n", "s", "<NOP>", opts)
 
 keymap("n", "J", "5j", opts)
