@@ -1,12 +1,15 @@
 return {
     "petertriho/nvim-scrollbar",
-    event = { "VeryLazy" },
+    -- event = { "VeryLazy" },
+    event = "BufReadPre",
     opts = {
+        hide_if_all_visible = true,
         handle = {
             -- color = "#0d6980",
             -- color = "#2aa198",
             -- color = "#002b36",
-            color = "#073642",
+            -- color = "#586e75",
+            color = "#839496",
         },
         marks = {
             Search = { color = "#d33682" },
@@ -16,9 +19,20 @@ return {
             Hint = { color = "#268bd2" },
             Misc = { color = "#6c71c4" },
         },
+
         excluded_filetypes = {
             "TelescopeResults",
+            "blink-cmp-menu",
+            "cmp_docs",
+            "cmp_menu",
+            -- "dropbar_menu",
+            -- "dropbar_menu_fzf",
+            -- "DressingInput",
+            -- "terminal",
+            -- "nofile",
+            -- "noice",
             -- "prompt",
+            -- "TelescopePrompt",
             -- "TelescopePrompt",
             -- "noice",
             -- "LspsagaHover",

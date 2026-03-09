@@ -16,6 +16,7 @@ local M = {
 M.config = function()
     local cmp = require("cmp")
     local lspkind = require("lspkind")
+
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
     cmp.setup({
@@ -38,14 +39,10 @@ M.config = function()
 
         window = {
             completion = cmp.config.window.bordered({
-                -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
-                -- winhighlight = "",
-                -- winhighlight = "FloatBorder:Pmenu",
+                -- scrollbar = false,
             }),
-
             documentation = cmp.config.window.bordered({
                 winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
-                -- winhighlight = "",
             }),
         },
 
