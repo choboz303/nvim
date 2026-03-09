@@ -77,10 +77,15 @@ vim.diagnostic.config({ severity_sort = true })
 -- チルダ
 vim.opt.fillchars = { eob = " " }
 
-vim.opt.guicursor = "n-v-c:block-Cursor," .. "i-ci-ve:ver25-Cursor," .. "r-cr:hor20-Cursor"
+-- vim.opt.guicursor = "n-v-c:block-Cursor," .. "i-ci-ve:ver25-Cursor," .. "r-cr:hor20-Cursor"
 
 -- iterm2↓
 -- cursor blink
+vim.opt.guicursor = {
+    "n-v-c:block-Cursor",
+    "i-ci-ve:ver25-InsertCursor",
+    "r-cr:hor20-ReplaceCursor",
+}
 -- vim.opt.guicursor = {
 --     "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",
 --     "i:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250",

@@ -19,17 +19,20 @@ autocmd({ "ColorScheme", "VimEnter", "WinEnter" }, {
         Color.new("custom1", "#3d4d4d")
         Color.new("custom2", "#3e759c")
         Color.new("salmon", "#fa8072")
-        Color.new("cursor", "#03fcf8")
+        -- Color.new("cursor", "#dc322f")
+        Color.new("cursor", "#00fbff")
+        -- Color.new("cursorb", "#ffffff")
         -- Color.new("test", "#fdf6e3")
 
         -- ===== Core UI =====
-        Group.new("CursorColumn", nil, colors.custom0)
-        Group.new("CursorLine", nil, colors.custom0, styles.none)
         Group.new("Cursor", nil, colors.cursor)
+        -- Group.new("InsertCursor", nil, colors.cursor)
+        -- Group.new("ReplaceCursor", nil, colors.cursorb)
 
-        -- Group.new("WinBar", colors.base03, colors.base03, styles.none)
-        -- Group.new("WinBarNC", nil, colors.test, styles.none)
-        Group.new("WinBar", nil, colors.base2, styles.none)
+        Group.new("CursorLine", nil, colors.custom0, styles.none)
+
+        -- Group.new("WinBar", nil, colors.base02, styles.none)
+        Group.new("WinBar", nil, colors.custom1, styles.none)
         Group.new("WinBarNC", nil, colors.none, styles.none)
 
         Group.new("Whitespace", colors.custom1, nil)
